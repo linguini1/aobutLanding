@@ -1,0 +1,229 @@
+// Important colours
+
+$primary: #82D1AF;
+$secondary: #69ad90ff;
+$tertiary: #141414;
+$accent: #e6406e;
+
+// Measurements
+$width: 70%;
+$left: 15%;
+$logo: 300px;
+$head-font: 16px;
+$p-font: 9.2px;
+
+// Card measurements
+%cards {
+    left: $left;
+    border-radius: 20px;
+    width: $width;
+    margin-top: 2.5em;
+}
+
+// Device sizes
+$tablet: 700px;
+$desktop: 1200px;
+$ultra-wide: 1800px;
+
+// Mix ins
+@mixin tablet {
+    @media (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin ultra-wide {
+    @media (min-width: #{$ultra-wide}) {
+        @content;
+    }
+}
+
+
+// Coding
+
+body, html {
+    height: 100%;
+}
+
+body {
+    background-color: $primary;
+    margin: 0;
+
+    #bg {
+        background-color: $tertiary;
+        clip-path: polygon(100% 100%, 0% 100%, 100% 11%);
+        width: 100%;
+        height: inherit;
+        z-index: -1;
+        position: absolute;
+
+        @include desktop {
+            clip-path: polygon(100% 100%, 100% 35%, 0% 100%);
+        }
+
+    }
+
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+.content {
+    height: 75%;
+
+    @include desktop {
+        height: auto;
+    }
+}
+
+.logo {
+    width: $logo;
+    height: $logo;
+    display: block;
+    margin: auto;
+
+    @include desktop {
+        width: 50%;
+        height: auto;
+    }
+
+}
+
+.card {
+    @extend %cards;
+    font-family: 'Montserrat';
+    background-color: $secondary;
+    color: $tertiary;
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 22%;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include tablet {
+        height: 200px;
+    }
+
+    @include desktop {
+        height: 50%;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: .5em;
+    }
+
+    li {
+        padding: .8em;
+
+        h3 {
+            font-family: 'Bevan';
+            font-size: $head-font;
+            padding-left: 10%;
+            width: 60px;
+
+            @include tablet {
+                font-size: 24px;
+                width: 100px;
+            }
+
+            @include desktop {
+                font-size: 28px;
+                width: 130px;
+            }
+
+            @include ultra-wide {
+                font-size: 40px;
+                width: 180px;
+            }
+
+        }
+
+        span {
+            width: 8px;
+            height: 70%;
+            bottom: 15%;
+            background: $tertiary;
+            position: absolute;
+
+            @include tablet {
+                width: 10px;
+            }
+        }
+    
+        p {
+            font-size: $p-font;
+            padding-right: 6%;
+
+            @include tablet {
+                font-size: 20px;
+            }
+
+            @include desktop {
+                font-size: 18px;
+            }
+
+            @include ultra-wide {
+                font-size: 26px;
+            }
+
+        }
+
+    }
+
+}
+
+.socials {
+    @extend %cards;
+    background-color: $accent;
+    position: relative;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        li {
+            padding: 10%;
+        }
+
+    }
+
+    .github {
+        width: 45px;
+        height: 45px;
+    }
+
+    .discord {
+        width: 50px;
+        height: 50px;
+    }
+
+    .itch {
+        width: 50px;
+        height: 50px;
+    }
+
+}

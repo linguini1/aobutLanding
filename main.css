@@ -1,0 +1,231 @@
+.card, .socials {
+  left: 15%;
+  border-radius: 20px;
+  width: 70%;
+  margin-top: 2.5em;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  background-color: #82D1AF;
+  margin: 0;
+}
+
+body #bg {
+  background-color: #141414;
+  -webkit-clip-path: polygon(100% 100%, 0% 100%, 100% 11%);
+          clip-path: polygon(100% 100%, 0% 100%, 100% 11%);
+  width: 100%;
+  height: inherit;
+  z-index: -1;
+  position: absolute;
+}
+
+@media (min-width: 1200px) {
+  body #bg {
+    -webkit-clip-path: polygon(100% 100%, 100% 35%, 0% 100%);
+            clip-path: polygon(100% 100%, 100% 35%, 0% 100%);
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.content {
+  height: 75%;
+}
+
+@media (min-width: 1200px) {
+  .content {
+    height: auto;
+  }
+}
+
+.logo {
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: auto;
+}
+
+@media (min-width: 1200px) {
+  .logo {
+    width: 50%;
+    height: auto;
+  }
+}
+
+.card {
+  font-family: 'Montserrat';
+  background-color: #69ad90ff;
+  color: #141414;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 22%;
+}
+
+.card:first-child {
+  margin-top: 0;
+}
+
+@media (min-width: 700px) {
+  .card {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    height: 50%;
+  }
+}
+
+.card ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-left: .5em;
+}
+
+.card li {
+  padding: .8em;
+}
+
+.card li h3 {
+  font-family: 'Bevan';
+  font-size: 16px;
+  padding-left: 10%;
+  width: 60px;
+}
+
+@media (min-width: 700px) {
+  .card li h3 {
+    font-size: 24px;
+    width: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card li h3 {
+    font-size: 28px;
+    width: 130px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .card li h3 {
+    font-size: 40px;
+    width: 180px;
+  }
+}
+
+.card li span {
+  width: 8px;
+  height: 70%;
+  bottom: 15%;
+  background: #141414;
+  position: absolute;
+}
+
+@media (min-width: 700px) {
+  .card li span {
+    width: 10px;
+  }
+}
+
+.card li p {
+  font-size: 9.2px;
+  padding-right: 6%;
+}
+
+@media (min-width: 700px) {
+  .card li p {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card li p {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .card li p {
+    font-size: 26px;
+  }
+}
+
+.socials {
+  background-color: #e6406e;
+  position: relative;
+  height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.socials ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.socials ul li {
+  padding: 10%;
+}
+
+.socials .github {
+  width: 45px;
+  height: 45px;
+}
+
+.socials .discord {
+  width: 50px;
+  height: 50px;
+}
+
+.socials .itch {
+  width: 50px;
+  height: 50px;
+}
+/*# sourceMappingURL=main.css.map */
