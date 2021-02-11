@@ -1,9 +1,17 @@
 // Important colours
 
-$primary: #82D1AF;
-$secondary: #69ad90ff;
+$primary: rgb(163, 255, 148);
+$secondary: rgba(143, 235, 128, 0.6);
 $tertiary: #141414;
-$accent: #e6406e;
+$accent: rgba(230, 64, 110, 0.5);
+
+// hoverable icons
+$github-hover: rgba(0, 0, 0, 0.8);
+$discord-hover: rgba(116, 136, 222, 0.8);
+$itch-hover: rgba(255, 36, 73, 0.8);
+
+// blur
+$blur-amount: 15px;
 
 // Measurements
 $width: 70%;
@@ -11,11 +19,13 @@ $left: 15%;
 $logo: 300px;
 $head-font: 16px;
 $p-font: 9.2px;
+$roundness: 20px;
+
 
 // Card measurements
 %cards {
     left: $left;
-    border-radius: 20px;
+    border-radius: #{$roundness};
     width: $width;
     margin-top: 2.5em;
 }
@@ -47,13 +57,28 @@ $ultra-wide: 1800px;
 
 // Coding
 
+
+img {
+    // disable user from dragging images
+    -webkit-user-drag: none;
+}
+
 body, html {
     height: 100%;
+    // disable user from selecting images
+    user-select: none;
+}
+p,
+h3 {
+    // enable user to only select text
+    user-select: text;
 }
 
 body {
     background-color: $primary;
     margin: 0;
+    // hide scrollbar
+    overflow-y: hidden;
 
     #bg {
         background-color: $tertiary;
@@ -78,8 +103,6 @@ body {
 }
 
 .content {
-    height: 75%;
-
     @include desktop {
         height: auto;
     }
@@ -95,13 +118,13 @@ body {
         width: 50%;
         height: auto;
     }
-
 }
 
 .card {
     @extend %cards;
     font-family: 'Montserrat';
     background-color: $secondary;
+    backdrop-filter: blur(15px);
     color: $tertiary;
     display: flex;
     align-items: center;
@@ -127,7 +150,6 @@ body {
         justify-content: center;
         padding-left: .5em;
     }
-
     li {
         padding: .8em;
 
@@ -195,7 +217,34 @@ body {
     height: 70px;
     display: flex;
     justify-content: center;
-
+    align-items: center;
+    backdrop-filter: blur(#{$blur-amount});
+    
+    .social {
+        width: calc(100% / 3);
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        border-radius: #{$roundness};
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+    }
+    .social:hover {
+        transition: 0.2s ease-out;
+        img {
+            filter: invert(1);
+        }
+    }
+    .social#github:hover {
+        background: #{$github-hover};
+    }
+    .social#discord:hover {
+        background: #{$discord-hover};
+    }
+    .social#itch:hover {
+        background: #{$itch-hover};
+    }
     ul {
         list-style: none;
         display: flex;
@@ -205,23 +254,20 @@ body {
         margin: 0;
         padding: 0;
 
-        li {
-            padding: 10%;
-        }
 
     }
 
-    .github {
+    .icon#github {
         width: 45px;
         height: 45px;
     }
 
-    .discord {
+    .icon#discord {
         width: 50px;
         height: 50px;
     }
 
-    .itch {
+    .icon#itch {
         width: 50px;
         height: 50px;
     }
