@@ -1,9 +1,9 @@
 // Important colours
 
-$primary: rgb(163, 255, 148);
-$secondary: rgba(143, 235, 128, 0.6);
+$primary: #82D1AF;
+$secondary: #69ad90;
 $tertiary: #141414;
-$accent: rgba(230, 64, 110, 0.5);
+$accent: #e6406e;
 
 // hoverable icons
 $github-hover: rgba(0, 0, 0, 0.8);
@@ -257,17 +257,17 @@ body {
 
     }
 
-    .icon#github {
+    .icon#githubicon {
         width: 45px;
         height: 45px;
     }
 
-    .icon#discord {
+    .icon#discordicon {
         width: 50px;
         height: 50px;
     }
 
-    .icon#itch {
+    .icon#itchicon {
         width: 50px;
         height: 50px;
     }
